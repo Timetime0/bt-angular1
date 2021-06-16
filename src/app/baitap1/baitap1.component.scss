@@ -1,0 +1,18 @@
+@mixin m_content ($bg, $w){
+    background-color: $bg;
+        padding: 50px 0;
+        text-align: center;
+        color: black;
+        width: $w;
+}
+
+.contents{
+    display: flex;
+    .content {
+      @include m_content(green, 60%)
+    }
+    .sidebar{
+        @include m_content(blue, 40%)
+    }
+}
+

@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>ĐẶT VÉ XE BUS VỚI TIME</h1>
+  <div class="row">
+    <div class="col-6">
+      <h3>Tài xế</h3>
+      <ng-container *ngFor="let item of mangGhe; let index = index">
+        <app-ghe
+          [ghe]="item"
+          (choiceChair)="choiceChair($event, item)"
+        ></app-ghe>
+        <br *ngIf="(index + 1) % 4 === 0" />
+      </ng-container>
+      <h6>Số ghế đang đặt: {{ amountOfChoiceNumber }}</h6>
+      <h6>Số ghế chưa đặt: {{ amountOfNumber }}</h6>
+    </div>
+    <div class="col-6">
+      <h3>Danh sách ghế đã đặt</h3>
+      <div *ngIf="status1; else noiDungElse">
+        <div>Trống</div>
+      </div>
+      <ng-template #noiDungElse>
+        <ng-container *ngFor="let item of danhSachDangChon">
+          <div>Ghế: {{ item.SoGhe }} - Giá: {{ item.Gia }}$</div>
+        </ng-container>
+        <button class="btn btn-danger" (click)="GetChair()">Đặt ghế</button>
+      </ng-template>
+    </div>
+    <div *ngIf="status" class="popup">Đặt ghế thành công</div>
+  </div>
+</div>
+"

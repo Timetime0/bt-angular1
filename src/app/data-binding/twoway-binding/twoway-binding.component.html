@@ -1,0 +1,25 @@
+<h1>Two Way Binding</h1>
+<!-- property binding -->
+<input type="text" [value]="userName" [(ngModel)]="userName" #hoTen2/> 
+<!-- interpolation -->
+<p>{{userName}}</p>
+<button class="btn btn-success" (click)="onClick(hoTen2.value)">Event Binding</button>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" [value]="email" [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <label>FullName</label>
+                <input type="text" class="form-control" [value]="fullName" #name>
+            </div>
+            <button class="btn btn-danger" (click)="onClickFullName(name.value)">Submit</button>
+            <p>Email (TwoWay binding): {{email}}</p>
+            <p>FullName (OneWay): {{fullName}}</p>
+
+        </div>
+    </div>
+</div>

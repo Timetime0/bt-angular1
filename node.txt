@@ -1,0 +1,73 @@
+
+
++package.json: những phiên bản
++package.lock: lịch sử
++ read-me: mô tả
++ ... ts: là toàn bộ typestript
+
+/// start: ng serve --o
++ angular : (frame word)
+    singer page: không load lại trang, duy nhất 1 file html
+    component: tổ chức thành component
+    Nhược điểm: SEO
+    
++ component: chia thành nhiều thành phần nhỏ
+
+
+index.html => main.ts
+
++ Mỗi component tạo (4 file): 
+
+    + ng g c <ten thư mục>
+    +b1: component
+  -------------------------------  
+
+
+    + ng g m <module>
+app module
+    +b2: module (tạo app module riêng biệt)
+        b2
+- header        - list card
+- carousel      - list
+- wwd           - contact 
+- contact       - footer
+  -------------------------------  
+
+    + ng g c <ten thư mục> --module=<tên module>
+
++ DataBinding
+  -one way 
+    *interpolation: phép nội suy
+    *property binding []
+    *Event binding ()
+  -two way [(ngModal)] 
+
+(reactjs: {}=> rendering elements)
+
++ Diretive
+  - Structural Directive
+    * ngIf 
+    <ng-template></ng-template> là component cục bộ chỉ gọi trong component parent
+    * ngSwitch
+    * ngFor
+  => ng-container: được sử dụng khi dùng nhiều structural directive
+  - Attribute Directive
+  [ngClass]
+  [ngStyle]
+  ngNonBinable => show tên biến khi {{}}
+  Attribute Directive : tự định nghĩa =>Cần import vào module nào cần sửa dụng
+  = = Cách 1: sử dụng ElementRef
+  = = Cách 2: sử dụng Renderer2
+  => để thêm sự kiện dùng HostListener
+
+  + Từ cha về con trong react (Lifting State Up)
+  + Từ cha về con trong angular (input và output) 
+
+  + interface là kiểu khai báo bắt buộc (gò bó)
+
+  +Routing:
+    -Routing theo component
+    -Routing theo module : dự án lớn
+
+  + property: thuộc tính mà thẻ định nghĩa
+  + Attribute: thuộc tính đối tượng

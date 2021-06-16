@@ -1,0 +1,20 @@
+<div class="container text-center my-5" style="font-size: 35px">
+  <h1>ngSwitch</h1>
+  <div [ngSwitch]="dkSwitch">
+    <div *ngSwitchCase="'red'" style="color: red">Màu Đỏ</div>
+    <div *ngSwitchCase="'orangered'" style="color: orangered">Màu Cam</div>
+    <div *ngSwitchCase="'blue'" style="color: blue">Màu Xanh</div>
+    <div *ngSwitchCase="'green'" style="color: green">Màu Xanh</div>
+    <div *ngSwitchDefault style="color: violet">Màu Tím</div>
+  </div>
+
+  <select #t (change)="changColor(t.value)">
+      <option value="red" style="color: red">red</option>
+      <option value="orangered"  style="color: orangered">orange</option>
+      <option value="blue" style="color: blue">blue</option>
+      <option value="green"  style="color: green"> green</option>
+      <option value="violet" style="color: violet">violet</option>
+
+  </select>
+
+</div>

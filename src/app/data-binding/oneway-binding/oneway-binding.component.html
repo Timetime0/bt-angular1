@@ -1,0 +1,7 @@
+<h1>Oneway Binding</h1>
+<p>{{fullName}}</p>
+<input type="text" value={{fullName}}>
+<!-- Property binding -->
+<input type="text" [value]="fullName" #hoTen>
+<!-- Event binding -->
+<button class="btn btn-success" (click)="eventBinding(hoTen.value)">Event Binding</button>

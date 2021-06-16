@@ -1,0 +1,17 @@
+<div class="container text-center" >
+    <h1>ngFor</h1>
+    <ng-container *ngIf="dssv">
+        <div *ngFor="let item of dssv; let stt=index" style="font-size: 35px;">
+            {{stt + 1}}. {{item.ten}} - {{item.tuoi}}
+        </div>
+    </ng-container>
+
+    <ng-container *ngTemplateOutlet="template">
+    
+    </ng-container>
+    <ng-template #template>
+        <h2>Template</h2>
+
+    </ng-template>
+
+</div>

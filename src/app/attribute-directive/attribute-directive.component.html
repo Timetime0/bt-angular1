@@ -1,0 +1,46 @@
+<h1>Attribute Directive</h1>
+<app-ngclass></app-ngclass>
+<app-ngstyle></app-ngstyle>
+
+<div appHighlight>Natsu</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>MaSP</label>
+          <input type="text" class="form-control" #MaSP/>
+        </div>
+        <div class="form-group">
+          <label>TenSP</label>
+          <input type="text" class="form-control" #TenSP/>
+        </div>
+        <div class="form-group">
+          <label>GiaSP</label>
+          <input type="text" class="form-control" #GiaSP/>
+        </div>
+  
+        <button class="btn btn-success" (click)="addProduct(MaSP.value,TenSP.value,GiaSP.value)">Thêm SP</button>
+      </div>
+      <div class="col-md-12">
+        <table class="table" >
+            <thead>
+              <tr>
+                <th>MaSP</th>
+                <th>TenSP</th>
+                <th>GiaSP</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf = "dssp">
+                    <tr *ngFor="let item of dssp; let stt = index" [ngClass]="{bgTR: stt%2 === 0}"> 
+                        <td>{{item.maSP}}</td>
+                        <td>{{item.tenSP}}</td>
+                        <td>{{item.giaSP}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
